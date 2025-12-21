@@ -1,0 +1,101 @@
+<!-- index.html (Updated) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer - Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1><i class="fas fa-briefcase"></i> AI Resume Analyzer</h1>
+            <p>Professional Career Enhancement Platform</p>
+        </div>
+
+        <div id="errorMsg" class="error-msg"></div>
+        <div id="successMsg" class="success-msg"></div>
+
+        <div class="form-toggle">
+            <button class="toggle-btn active" onclick="showForm('login')">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <button class="toggle-btn" onclick="showForm('register')">
+                <i class="fas fa-user-plus"></i> Register
+            </button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form">
+            <div class="input-group">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn" id="loginBtn">
+                <span id="loginText">Sign In</span>
+                <i class="fas fa-spinner fa-spin" id="loginSpinner" style="display: none;"></i>
+            </button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="auth-form" style="display: none;">
+            <div class="input-group">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="regName" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="regEmail" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="regPassword" placeholder="Password (1 Upper, 1 Number, 1 Symbol)" required>
+                <!-- <small class="password-requirements">• 1 Uppercase • 1 Number • 1 Symbol • Min 8 chars</small> -->
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="login-btn" id="regBtn">
+                <span id="regText">Create Account</span>
+                <i class="fas fa-spinner fa-spin" id="regSpinner" style="display: none;"></i>
+            </button>
+        </form>
+
+        <div class="forgot-pass" onclick="alert('Password reset functionality coming soon!')">
+            <i class="fas fa-question-circle"></i> Forgot Password?
+        </div>
+
+        <!-- Add ye forgot-password-modal HTML ke end mein login-container ke andar -->
+<div id="forgotModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-key"></i> Reset Password</h3>
+            <span class="close-btn" onclick="closeForgotModal()">&times;</span>
+        </div>
+        <form id="forgotForm">
+            <div class="input-group">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="forgotEmail" placeholder="Enter your email address" required>
+            </div>
+            <button type="submit" class="login-btn" id="forgotBtn">
+                <span id="forgotText">Send Reset Link</span>
+                <i class="fas fa-spinner fa-spin" id="forgotSpinner" style="display: none;"></i>
+            </button>
+        </form>
+        <p class="modal-note">Check your inbox for reset instructions</p>
+    </div>
+</div>
+
+
+    </div>
+
+    <script src="./js/login.js"></script>
+</body>
+</html>
